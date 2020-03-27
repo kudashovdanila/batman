@@ -9,6 +9,8 @@
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700&display=swap&subset=cyrillic"
     rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,900&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -17,9 +19,9 @@
   <header class="header">
     <div class="container">
       <div class="header__content">
-        <a href="index.html" class="logo">КиноПульс</a>
+        <a href="index.html" class="logo animated pulse delay-2s">КиноПульс</a>
         <form action="#" class="search">
-          <input type="search" class="search__input" placeholder="Фильмы, сериалы, актеры">
+          <input type="search" class="search__input" placeholder="Фильмы, сериалы, актеры" required>
           <button type="submit" class="search__btn btn-transparent">
             <img src="img/header/search-icon.svg" alt="Поиск">
           </button>
@@ -38,19 +40,20 @@
     <div class="container">
       <h1 class="main__title">Бэтмен</h1>
       <small class="main__subtitle">The Batman</small>
-      <div class="main__info main-info">
+      <div class="main__info main-info animated fadeInUp delay-1s">
         <div class="main-info__movie">
           <span class="main-info__tag">Фильм</span>
           <span class="main-info__country">США, 2021 год</span>
-          <a href="#" class="main-info__play"> <img src="img/main/play.svg" alt="Смотреть трейлер"
-              class="main-info__play-img"> Смотреть трейлер</a>
+          <a href="https://www.youtube.com/watch?v=Xo8i2ZDMlQg" class="main-info__play" data-fancybox> <img
+              src="img/main/play.svg" alt="Смотреть трейлер" class="main-info__play-img"> Смотреть трейлер</a>
         </div>
-        <a href="#" class="main-info__more">Подробнее<img src="img/main/down.svg" alt="Подробнее"
+        <a href="#scroll" onclick="slowScroll('#scroll')" class="main-info__more">Подробнее<img src="img/main/down.svg"
+            alt="Подробнее"
             class="main-info__down-img"></a>
       </div>
       <div class="main__content">
         <div class="main__short-info main-short-info">
-          <img src="img/main/poster.jpg" alt="Постер" class="main-short-info__poster">
+          <img src="img/main/poster.jpg" alt="Постер" class="main-short-info__poster" id="scroll">
           <button class="main-short-info__btn">Буду смотреть</button>
           <h3 class="main-short-info__actors-title">В главных ролях:</h3>
           <ul class="main-short-info__actors">
@@ -68,17 +71,17 @@
         </div>
         <div class="main__full-info main-full-info">
           <nav class="tabs">
-            <a href="#" class="tabs__item tabs__item_active">Описание</a>
-            <a href="#" class="tabs__item">Рецензии</a>
-            <a href="#" class="tabs__item">Премьеры</a>
-            <a href="#" class="tabs__item">Актеры</a>
-            <a href="#" class="tabs__item">Награды</a>
-            <a href="#" class="tabs__item">Факты</a>
-            <a href="#" class="tabs__item">Сайты</a>
-            <a href="#" class="tabs__item"><img src="img/main/bookmark-icon.svg" alt="Добавлено в закладки" class="tabs__item-img"></a>
+            <a href="#about" class="tabs__item tabs__item_active">Описание</a>
+            <a href="#reviews" class="tabs__item">Рецензии</a>
+            <a href="#premieres" class="tabs__item">Премьеры</a>
+            <a href="#actors" class="tabs__item">Актеры</a>
+            <a href="#awards" class="tabs__item">Награды</a>
+            <a href="#facts" class="tabs__item">Факты</a>
+            <a href="#sites" class="tabs__item">Сайты</a>
+            <button class="tabs__item"><img src="img/main/bookmark-icon.svg" alt="Добавлено в закладки" class="tabs__item-img"></button>
           </nav>
           <div class="main-full-info__content">
-            <div class="tabs-content">
+            <div class="tabs-content visible" id="about">
               <p class="tabs-content__text">Предстоящий американский супергеройский фильм, основанный на одноимённых
                 комиксах издательства DC Comics. Картина будет выпущена компанией Warner Bros. и будет перезагрузкой
                 всех фильмов о Бэтмене.</p>
@@ -99,10 +102,28 @@
                 материал, в котором был показан персонаж Детстроук. 8 сентября 2016 года Джефф Джонс подтвердил, что Джо
                 Манганьелло сыграет наёмника Слейда Уилсона, который, возможно, станет главным злодеем фильма.</p>
             </div>
+            <div class="tabs-content" id="reviews">
+              <p class="text">Тут скоро появятся рецензии</p>
+            </div>
+            <div class="tabs-content" id="premieres">
+              <p class="text">Тут скоро появятся премьеры</p>
+            </div>
+            <div class="tabs-content" id="actors">
+              <p class="text">Тут скоро появятся актёры</p>
+            </div>
+            <div class="tabs-content" id="awards">
+              <p class="text">Тут скоро появятся награды</p>
+            </div>
+            <div class="tabs-content" id="facts">
+              <p class="text">Тут скоро появятся факты</p>
+            </div>
+            <div class="tabs-content" id="sites">
+              <p class="text">Тут скоро появятся сайты</p>
+            </div>
             <div class="subscribe">
               <h3 class="subscribe__title">Подпишитесь на обновления</h3>
               <form action="#" class="subscribe__form subscribe-form">
-                <input type="text" class="subscribe-form__input" placeholder="Ваш Email">
+                <input type="text" class="subscribe-form__input" placeholder="Ваш Email" required>
                 <button type="submit" class="subscribe-form__btn"><img src="img/main/check.svg" alt="Подписаться"></button>
               </form>
               <a href="#" class="subscribe__banner">
@@ -117,6 +138,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 
